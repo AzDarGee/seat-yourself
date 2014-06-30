@@ -1,5 +1,5 @@
-<h1 class="page-header center">Restaurants Homepage</h1>
-
+<h1 class="center">Restaurants</h1>
+<h2><%= link_to "+ Add", new_restaurant_path %></h2>
 <% @restaurants.each do |x| %>
   <ul>
     <li><%= x.name %></li>

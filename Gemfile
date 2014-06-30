@@ -9,11 +9,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'masonry-rails'
+gem 'aws-sdk', '~> 1.44.0'
 group :development do
   gem 'guard-livereload', require: false
   gem "rack-livereload"
+  gem 'spring'
 end
