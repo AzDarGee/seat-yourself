@@ -13,3 +13,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+group :development do
+  gem 'guard-livereload', require: false
+  gem "rack-livereload"
+end

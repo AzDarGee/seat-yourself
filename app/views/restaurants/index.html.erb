@@ -1,1 +1,7 @@
-<h1>Restaurants HOmepage</h1>
+<h1 class="page-header center">Restaurants Homepage</h1>
+
+<% @restaurants.each do |x| %>
+  <ul>
+    <li><%= x.name %></li>
+  </ul>
+<% end %>
