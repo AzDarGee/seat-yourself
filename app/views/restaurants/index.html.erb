@@ -1,7 +1,8 @@
 <h1 class="center">Restaurants</h1>
 <h2><%= link_to "+ Add", new_restaurant_path %></h2>
 <% @restaurants.each do |x| %>
-  <ul>
-    <li><%= x.name %></li>
-  </ul>
+  <div>
+    <h1><%= x.name %></h1>
+    <div class="image"><%= image_tag x.image.url(:medium) %></div>
+  </div>
 <% end %>

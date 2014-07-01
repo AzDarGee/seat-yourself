@@ -21,4 +21,8 @@ class RestaurantsController < ApplicationController
   def edit
     @restaurant = Restaurant.find(params[:id])
   end
+  private
+  def rest_params
+    params.require(:restaurant).permit(:image,:name,:address,:summary,:price_range,)
+  end
 end
