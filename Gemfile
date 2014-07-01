@@ -16,6 +16,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'masonry-rails'
 gem 'aws-sdk', '~> 1.44.0'
 group :development do
+  gem 'guard'
   gem 'guard-livereload', require: false
   gem "rack-livereload"
   gem 'spring'
