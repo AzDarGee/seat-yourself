@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<%= render 'layouts/partials/header' %>
+	
 	<% if flash[:notice] %>
     <div class="alert alert-info"><%= notice %></div>
   <% end %>
