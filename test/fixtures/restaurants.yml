@@ -2,6 +2,16 @@
 
 one:
   name: MyString
+  address: MyString
+  description: MyString
+  capacity: 1
+  user_id: 1
+  category_id: 1
 
 two:
   name: MyString
+  address: MyString
+  description: MyString
+  capacity: 1
+  user_id: 1
+  category_id: 1
