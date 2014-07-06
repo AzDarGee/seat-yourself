@@ -93,6 +93,7 @@ GEM
     minitest (5.3.5)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -175,6 +176,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   masonry-rails
+  pg
   rack-livereload
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
