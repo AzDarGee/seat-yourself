@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
 	def index
-		@restaurants = Restaurant.all
+		@restaurants = Restaurant.search(params[:search])
 	end
 	def new
 		@restaurant = Restaurant.new
@@ -35,12 +35,6 @@ class RestaurantsController < ApplicationController
 	def search
     @restaurants = Restaurant.search(params[:search])
     render @restaurants
-  end
-  def rest_of_name
-  	@restaurant = Restaurant.find(params[:id])
-  	@restaurant.name[0] = ''
-  	puts @restaurant.name
-  	@rest_of_name = @restaurant.name
   end
 	private
 	def restaurant_params

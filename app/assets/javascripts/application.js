@@ -15,3 +15,16 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).ready(function() {
+  $('#search-form').submit(function(event) {
+    event.preventDefault();
+    var searchValue = $('#search-input').val();
+     $.get('/restaurants/search?search=' + searchValue)
+      .done(function(data) {
+        $('#restaurants').html(data);
+      }).error(function() {
+        alert('error!');
+      });
+  });
+});
