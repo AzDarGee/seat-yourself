@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
-  #  Controller#
-  root to: "restaurants#index"
+  get '/about' => "static_pages#about", as: :about
+  get '/contact_us' => "static_pages#contact_us", as: :contact_us
 
   devise_for :users
 
-  resources :restaurants do
+  resources :restaurants, shallow: true do
     get :search, on: :collection
     resources :reservations, only: :create
+    resources :reviews
   end
 
-  get :static_pages
+  root to: "restaurants#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
