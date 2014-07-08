@@ -1,7 +1,12 @@
 <div class='row'>
   <div class='col-md-12'>
     <ul class='list-group'>
-
+      <li class='list-group-item'>
+        <%= form_tag restaurants_path, method: :get, authentication: false, id: 'search-form' do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </li>
       <% @restaurants.each do |r| %>
       	<li class='list-group-item'>
           <div>
@@ -14,7 +19,7 @@
               <%= rest_of_name  %>
             </span>
 
-            <span class='address-design'>=><%= r.address %></span>
+            <span class='address-design'> => <%= r.address %></span>
 
             <hr>
           </div>
