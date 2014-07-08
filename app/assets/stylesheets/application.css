@@ -86,3 +86,10 @@ a {
 .make-translucent {
   opacity: 0.7;
 }
+
+#search-input {
+  font-size: 40px;
+  height: 60px;
+  padding: 15px;
+  text-align: center;
+}
