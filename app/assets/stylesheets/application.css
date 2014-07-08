@@ -91,7 +91,12 @@ a {
   height: 60px;
   padding: 35px;
   text-align: center;
-  background-color: #ecf0f1;
-  border: 1px solid white;
+  background-color: white;
+  margin-top: -1px;
 }
 
+.btn-default {
+  height: 50px;
+  font-size: 25px;
+  font-family: 'SourceCodePro-Light';
+}
