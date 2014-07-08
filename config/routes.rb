@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  #  Controller#
   root to: "restaurants#index"
+
+  devise_for :users
 
   resources :restaurants do
     get :search, on: :collection
+    resources :reservations, only: :create
   end
+
+  get :static_pages
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
