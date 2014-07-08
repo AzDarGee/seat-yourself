@@ -4,7 +4,18 @@
 
       <% @restaurants.each do |r| %>
       	<li class='list-group-item'>
-          <div><span class='title-design'><%= r.name %></span> | <span class='address-design'><%= r.address %></span></div>
+          <div>
+            <span class='title-design-first-letter'><%= r.name.chars.first %></span>
+              <span class='title-design'>
+              <% rest_of_name = '' %>
+              <% r.name.chars[1..-1].each do |letter| %>
+                <% rest_of_name += letter %>
+              <% end %>
+              <%= rest_of_name  %>
+            </span>
+            <hr>
+            <span class='address-design'><%= r.address %></span>
+          </div>
           <div class="center">Description: <%= r.description %></div>
           <div class='center'>Capacity: <%= r.capacity %></div>
           <% if current_user %>

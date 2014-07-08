@@ -36,6 +36,12 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.search(params[:search])
     render @restaurants
   end
+  def rest_of_name
+  	@restaurant = Restaurant.find(params[:id])
+  	@restaurant.name[0] = ''
+  	puts @restaurant.name
+  	@rest_of_name = @restaurant.name
+  end
 	private
 	def restaurant_params
 			params.require(:restaurant).permit(:name,:address,:description,:capacity);

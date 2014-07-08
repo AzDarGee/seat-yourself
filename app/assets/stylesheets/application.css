@@ -24,3 +24,54 @@
 .right {
   text-align: right;
 }
+
+.title-design {
+  font-family: 'SourceCodePro-ExtraLight';
+
+  text-transform: lowercase;
+  font-size: 15rem;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: 5px;
+  border-left: 1px solid white;
+  color: #34495e;
+}
+
+.title-design-first-letter {
+  font-family: 'SourceCodePro-ExtraLight';
+  color: white;
+  border-bottom: 1px solid #34495e;
+  font-size: 20rem;
+}
+
+.address-design {
+  font-family: 'SourceCodePro-Light';
+  font-size: 6rem;
+  color: #34495e;
+}
+
+.title-divider {
+  color: #34495e;
+  font-family: 'source_code_proregular';
+  font-size: 15rem;
+  text-transform: lowercase;
+}
+
+/*#16a085 1abc9c*/
+
+body {
+  background-color: #1abc9c;
+}
+
+.list-group-item {
+  background-color: #1abc9c;
+  border: 1px solid white;
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
