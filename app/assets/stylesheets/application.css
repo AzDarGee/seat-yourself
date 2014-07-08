@@ -77,7 +77,6 @@ body {
   border-bottom: 5px solid #ecf0f1;
 }
 
-
 a {
   text-decoration: none;
   color: black;
@@ -90,6 +89,8 @@ a {
 #search-input {
   font-size: 40px;
   height: 60px;
-  padding: 15px;
+  padding: 35px;
   text-align: center;
+  background-color: #ecf0f1;
+  border: 1px solid white;
 }
