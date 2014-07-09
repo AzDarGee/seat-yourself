@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  #Authentication and Authorization
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :users, :only => [:new,:create]
+
   get '/about' => "static_pages#about", as: :about
   get '/contact_us' => "static_pages#contact_us", as: :contact_us
 
-  devise_for :users
+
 
   resources :restaurants, shallow: true do
     get :search, on: :collection
