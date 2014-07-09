@@ -6,9 +6,12 @@ class User < ActiveRecord::Base
           :trackable,
           :validatable
 
-  easy_roles :roles, method: :bitmask
-  # Constant variable storing roles in the system --> DO NOT CHANGE ORDER OF ARRAY, APPEND TO END TO ADD NEW ROLE
-  ROLES = %w[owner user]
+  Roles = [:owner,:default]
+
+  def is?(requested_role)
+    self.role == requested_role.to_s
+  end
+
 
   validates :email, presence: true
   validates :email, :uniqueness => true

@@ -10,13 +10,5 @@ class ApplicationController < ActionController::Base
    devise_parameter_sanitizer.for(:account_update) << :user_name
   end
 
-  private
-  def is_customer
-    current_user.is_a? Customer
-  end
-  def is_owner
-    current_user.is_a? Owner
-  end
 
-  helper_method :is_customer, :is_owner
 end
