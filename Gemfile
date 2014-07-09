@@ -13,7 +13,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'cancan'
 gem 'masonry-rails'
 
 group :development do
