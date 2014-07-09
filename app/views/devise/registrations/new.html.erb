@@ -14,6 +14,10 @@
         <%= f.email_field :email, class: "form-control" %>
       </div>
       <div class="form-group">
+        <%= f.label 'Restaurant Owner?' %> <br>
+        <%= f.select :roles, options_for_select(%w[owner user]), class: "form-control" %>
+      </div>
+      <div class="form-group">
         <%= f.label :password %>
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
