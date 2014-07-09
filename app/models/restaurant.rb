@@ -1,7 +1,7 @@
 class Restaurant < ActiveRecord::Base
 
   # ASSOCIATIONS
-  belongs_to :owner
+  belongs_to :owner, :class_name => 'User'
   belongs_to :category
   has_many :reservations
   has_many :reviews
