@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+	before_action :ensure_logged_in, :only => [:show]
+
 	def index
 		@restaurants = Restaurant.search(params[:search])
 	end
