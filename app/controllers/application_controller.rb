@@ -10,12 +10,4 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
-
-  protected
-  def configure_permitted_parameters
-   devise_parameter_sanitizer.for(:sign_up) << :user_name
-   devise_parameter_sanitizer.for(:account_update) << :user_name
-  end
-
-
 end

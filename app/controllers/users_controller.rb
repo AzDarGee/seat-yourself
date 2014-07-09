@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redrict_to restaurants_path, notice: 'Welcome, You have successfully signed up!'
+      redirect_to restaurants_path, notice: 'Welcome, You have successfully signed up!'
     else
       flash.now[:alert] = 'Could not register, try again!'
       render :new

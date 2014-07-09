@@ -4,7 +4,7 @@
   </div>
   <div class="panel-body">
     <%= form_for @user do |f| %>
-
+      <!-- Error messages if user fills in form wrong.. -->
       <% if @user.errors.any? %>
         <div class="error_messages">
           <h2>Form is invalid</h2>
@@ -17,27 +17,19 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :user_name %>
-        <%= f.text_field :user_name, :autofocus => true, class: "form-control" %>
+        <%= f.text_field :user_name, placeholder: "Full Name", class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control" %>
+        <%= f.text_field :email, placeholder: "Email", class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :password, placeholder: "Password", class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: 'form-control' %>
       </div>
-      <div class="form-group">
-        <%= f.submit "Sign up", class: "btn btn-primary" %>
-      </div>
+      <div class="actions"><%= f.submit "Sign Up", class: "btn btn-primary" %></div>
     <% end %>
   </div>
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
 </div>
+
