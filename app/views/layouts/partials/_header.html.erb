@@ -15,13 +15,17 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right navbar-font-size">
-          <% if current_user %>
+          <% if !current_user %>
+            <li><%= link_to "Sign In", new_session_path %></li>
+            <li><%= link_to "Sign Up as Customer", new_customer_path %></li>
+            <li><%= link_to "Sign Up as Owner", new_owner_path %></li>
+          <% elsif current_user.role === 'Owner' %>
             <li><%= link_to '+New Restaurant', new_restaurant_path %></li>
             <li><%= link_to current_user.user_name, '#' %></li>
             <li><%= link_to "Log out", session_path("current"), method: :delete %></li>
           <% else %>
-            <li><%= link_to "Sign In", new_session_path %></li>
-            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to current_user.user_name, '#' %></li>
+            <li><%= link_to "Log out", session_path("current"), method: :delete %></li>
           <% end %>
           <li><%= link_to 'About', about_path %></li>
         </ul>
