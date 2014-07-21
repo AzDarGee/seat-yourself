@@ -5,6 +5,8 @@ class RestaurantsController < ApplicationController
 		@restaurants = Restaurant.search(params[:search])
 		@restaurants = if params[:search]
 			Restaurant.near(params[:search], 1, units: :km)
+		elsif params[:latitude] && params[:longitude]
+			Restaurant.near([params[:latitude],params[:longitude]], 1, units: :km)
 		else
 			Restaurant.all
 		end

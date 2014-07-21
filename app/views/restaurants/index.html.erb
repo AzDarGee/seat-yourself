@@ -21,6 +21,9 @@
       <div class="btn-group">
         <button type="button" class="btn btn-default">American</button>
       </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="current-location">Near Me</button>
+      </div>
     </div>
 
 <div class='row'>
@@ -40,8 +43,6 @@
           <%= submit_tag "Search", name: nil, type: 'hidden' %>
         <% end %>
     </div>
-
-
 
     <ul class='list-group' id='restaurants'>
       <%= render @restaurants %>
