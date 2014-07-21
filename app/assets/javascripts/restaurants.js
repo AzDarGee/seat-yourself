@@ -17,11 +17,7 @@ $(document).on('ready page:load',function() {
     } else {
       alert("Get a better browser, can't use geolocation!");
     };
-
-    
-
   });
-
 });
 
 
