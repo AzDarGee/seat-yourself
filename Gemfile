@@ -14,6 +14,8 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'masonry-rails'
 gem 'bcrypt'
+gem "geocoder"
+gem 'whenever', :require => false
 
 group :development do
   gem 'guard'

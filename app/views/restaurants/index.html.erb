@@ -33,6 +33,13 @@
           <%= submit_tag "Search", name: nil, type: 'hidden' %>
         <% end %>
     </div>
+    <br />
+    <div class='form-group'>
+        <%= form_tag restaurants_path, method: :get, authentication: false, id: 'search-form', remote: true do %>
+          <%= text_field_tag :search, params[:search], placeholder: 'Find restuarants by address or postal code', class: 'form-control flat input-hg', id: 'search-input' %>
+          <%= submit_tag "Search", name: nil, type: 'hidden' %>
+        <% end %>
+    </div>
 
 
 

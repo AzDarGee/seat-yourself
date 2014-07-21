@@ -1,0 +1,22 @@
+<section class="restaurant-details">
+  <%= image_tag "http://farm4.staticflickr.com/3027/2896972929_d55c6d30de.jpg" %>
+
+  <h3><%= @restaurant.name %></h3>
+
+  <p><strong>Address: </strong><%= @restaurant.address %></p>
+  <p><strong>Description: </strong><%= @restaurant.description %></p>
+  <% if @restaurant.category %>
+    <p><strong>Category: </strong><%= @restaurant.category.name %></p>
+  <% end %>
+
+  <div class="clear"></div>
+</section>
+
+<% if @nearby_restaurants.present? %>
+  <h2>Nearby Restaurants</h2>
+  <ul>
+    <% @nearby_restaurants.each do |nr| %>
+      <li><%= "#{nr.name}, #{nr.distance * 100}m" %></li>
+    <% end %>
+  </ul>
+<% end %>

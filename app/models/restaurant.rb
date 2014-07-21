@@ -10,14 +10,15 @@ class Restaurant < ActiveRecord::Base
   # VALIDATIONS
   validates :name, presence: true
 
-
+  # GeoCoder
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   # Make new columns in schema for opening/closing hours of the restaurants
 
-
   def self.search(search)
     if search
-      where('name ILIKE ?', "%#{search}%")
+      where('name LIKE ?', "%#{search}%")
     else
       all
     end
