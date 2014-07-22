@@ -98,3 +98,8 @@ body {
   font-size: 25px;
   font-family: 'SourceCodePro-Light';
 }
+
+#map-canvas {
+  height: 500px;
+  width: 700px;
+}

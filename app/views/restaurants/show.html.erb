@@ -12,6 +12,10 @@
   <div class="clear"></div>
 </section>
 
+<div id="map-canvas">
+
+</div>
+
 <% if @nearby_restaurants.present? %>
   <h2>Nearby Restaurants</h2>
   <ul>
@@ -19,4 +23,10 @@
       <li><%= "#{nr.name}, #{nr.distance * 100}m" %></li>
     <% end %>
   </ul>
+<% end %>
+
+<%= javascript_tag do %>
+  window.latitude = <%= @restaurant.latitude.to_f %>;
+  window.longitude = <%= @restaurant.longitude.to_f %>;
+  window.showMarker = true;
 <% end %>
