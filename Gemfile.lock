@@ -52,6 +52,9 @@ GEM
     eventmachine (1.0.3)
     execjs (2.2.0)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formatador (0.2.5)
     geocoder (1.2.3)
     guard (2.6.1)
@@ -167,6 +170,7 @@ DEPENDENCIES
   bcrypt
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  figaro
   geocoder
   guard
   guard-livereload

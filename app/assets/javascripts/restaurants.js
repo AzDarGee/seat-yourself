@@ -18,6 +18,7 @@ $(document).on('ready page:load',function() {
       alert("Get a better browser, can't use geolocation!");
     };
   });
+
 });
 
 
@@ -36,7 +37,6 @@ function geolocationSuccess(position) {
         longitude: longitude
       }
     });
-
 };
 
 function geolocationError() {

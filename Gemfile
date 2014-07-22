@@ -16,6 +16,7 @@ gem 'masonry-rails'
 gem 'bcrypt'
 gem "geocoder"
 gem 'whenever', :require => false
+gem 'figaro'
 
 group :development do
   gem 'guard'

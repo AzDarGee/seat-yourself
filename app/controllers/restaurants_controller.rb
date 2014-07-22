@@ -6,14 +6,14 @@ class RestaurantsController < ApplicationController
 		@restaurants = if params[:search]
 			Restaurant.near(params[:search], 1, units: :km)
 		elsif params[:latitude] && params[:longitude]
-			Restaurant.near([params[:latitude],params[:longitude]], 1, units: :km)
+			Restaurant.near([params[:latitude],params[:longitude]], 2, units: :km)
 		else
 			Restaurant.all
 		end
 
-		respond_to do |f|
-			f.html
-			f.js
+		respond_to do |format|
+			format.html
+			format.js
 		end
 	end
 	def new
@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
 	def show
 		@restaurant = Restaurant.find(params[:id])
 		@reservation = @restaurant.reservations.build
-		@nearby_restaurants = @restaurant.nearbys(500, units: :km)
+		@nearby_restaurants = @restaurant.nearbys(2, units: :km)
 	end
 	def edit
 		@restaurant = Restaurant.find(params[:id])
