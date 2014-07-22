@@ -29,4 +29,6 @@
   window.latitude = <%= @restaurant.latitude.to_f %>;
   window.longitude = <%= @restaurant.longitude.to_f %>;
   window.showMarker = true;
+
+  window.coords = <%= raw @nearby_restaurants.map { |r| { latitude: r.latitude.to_f, longitude: r.longitude.to_f } }.to_json %>
 <% end %>

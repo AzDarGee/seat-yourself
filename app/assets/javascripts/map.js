@@ -18,6 +18,20 @@ function initializeMap() {
 
 };
 
+function addMarkers(coords) {
+    var image = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+
+    coords.forEach (function(coords) {
+        var myMarker = new google.maps.Marker({
+            position: new google.maps.LatLng(coords.latitude, coords.longitude),
+            map: map,
+            icon: image
+        });
+    });
+
+};
+
 $(document).on('ready page:load', function() {
     if ($('#map-canvas').length > 0) initializeMap();
+    if (coords.length > 0) addMarkers(coords);
 });
