@@ -17,6 +17,7 @@ gem 'bcrypt'
 gem "geocoder"
 gem 'whenever', :require => false
 gem 'figaro'
+gem 'sorcery'
 
 group :development do
   gem 'guard'
