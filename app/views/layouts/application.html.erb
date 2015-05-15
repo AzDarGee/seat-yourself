@@ -12,11 +12,11 @@
 	<%= render 'layouts/partials/header' %>
 
 	<% if flash[:notice] %>
-    <div class="alert alert-info"><%= notice %></div>
-  <% end %>
-  <% if flash[:alert] %>
-    <div class="alert alert-info"><%= alert %></div>
-  <% end %>
+        <div class="alert alert-info"><%= notice %></div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-info"><%= alert %></div>
+      <% end %>
 
   <div class="container-fluid">
 	 <%= yield %>
