@@ -1,12 +1,12 @@
 <li class='list-group-item'>
   <div>
-    <span class='title-design-first-letter'><%= restaurant.name.chars.first %></span>
+    <span class='title-design-first-letter'><%= link_to restaurant.name.chars.first, restaurant_path(restaurant) %></span>
       <span class='title-design right'>
         <% rest_of_name = '' %>
         <% restaurant.name.chars[1..-1].each do |letter| %>
           <% rest_of_name += letter %>
         <% end %>
-        <%= rest_of_name  %>
+        <%= rest_of_name %>
       </span>
 
     <span class='address-design'> => <%= restaurant.address %></span>

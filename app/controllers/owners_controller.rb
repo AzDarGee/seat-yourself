@@ -21,7 +21,7 @@ class OwnersController < ApplicationController
     redirect_to root_path, flash: { notice: 'Account deleted!' }
   end
   private
-  def owner_params
-    params.require(:owner).permit(:user_name,:email,:password,:password_confirmation)
-  end
+    def owner_params
+      params.require(:owner).permit(:user_name,:email,:password,:password_confirmation)
+    end
 end

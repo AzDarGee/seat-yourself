@@ -1,0 +1,34 @@
+<section class="restaurant-details">
+  <%= image_tag "http://farm4.staticflickr.com/3027/2896972929_d55c6d30de.jpg" %>
+
+  <h3><%= @restaurant.name %></h3>
+
+  <p><strong>Address: </strong><%= @restaurant.address %></p>
+  <p><strong>Description: </strong><%= @restaurant.description %></p>
+  <% if @restaurant.category %>
+    <p><strong>Category: </strong><%= @restaurant.category.name %></p>
+  <% end %>
+
+  <div class="clear"></div>
+</section>
+
+<div id="map-canvas">
+
+</div>
+
+<% if @nearby_restaurants.present? %>
+  <h2>Nearby Restaurants</h2>
+  <ul>
+    <% @nearby_restaurants.each do |nr| %>
+      <li><%= "#{nr.name}, #{nr.distance * 100}m" %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% javascript_tag do %>
+  window.latitude = <%= @restaurant.latitude.to_f %>;
+  window.longitude = <%= @restaurant.longitude.to_f %>;
+  window.showMarker = true;
+
+  window.coords = <%= raw @nearby_restaurants.map { |r| { latitude: r.latitude.to_f, longitude: r.longitude.to_f } }.to_json %>
+<% end %>
